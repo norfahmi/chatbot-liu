@@ -45,13 +45,11 @@
   }
   .brand { display: flex; align-items: center; gap: 12px; }
   .brand-mark {
-    width: 40px; height: 40px;
-    border-radius: 10px;
-    background: linear-gradient(135deg, var(--teal-light), var(--teal));
+    width: 44px; height: 44px;
     display: flex; align-items: center; justify-content: center;
-    font-weight: 700; font-size: 15px; color: #fff;
     flex-shrink: 0;
   }
+  .brand-mark img { width: 100%; height: 100%; object-fit: contain; }
   .brand-name { font-size: 15px; font-weight: 600; letter-spacing: 0.2px; }
   .brand-sub { font-size: 11.5px; color: #a9bdd0; letter-spacing: 0.4px; text-transform: uppercase; }
   .header-nav { display: flex; gap: 28px; font-size: 13.5px; }
@@ -195,6 +193,67 @@
   .card h3 { font-size: 16px; margin-bottom: 8px; }
   .card p { font-size: 13.8px; color: var(--muted); }
 
+  /* Tentang / Keahlian */
+  .about-list {
+    list-style: none;
+    margin: 0 0 24px;
+    font-size: 14.5px;
+    color: var(--ink);
+  }
+  .about-list li { margin-bottom: 8px; padding-left: 20px; position: relative; }
+  .about-list li::before {
+    content: "•";
+    color: var(--teal);
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+  }
+  .member-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-top: 8px;
+  }
+  @media (max-width: 700px) { .member-grid { grid-template-columns: 1fr; } }
+  .member-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .member-no {
+    flex-shrink: 0;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: rgba(14,124,134,0.1);
+    color: var(--teal);
+    font-size: 12.5px;
+    font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .member-name { font-size: 14px; font-weight: 600; line-height: 1.4; }
+  .member-role { font-size: 12.5px; color: var(--teal); font-weight: 600; margin-top: 2px; }
+  .member-org { font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+  .secretary-box {
+    margin-top: 24px;
+    background: rgba(14,124,134,0.06);
+    border: 1px dashed rgba(14,124,134,0.4);
+    border-radius: 12px;
+    padding: 16px 18px;
+    font-size: 13.5px;
+  }
+  .secretary-box .label {
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--teal);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
   /* FAQ */
   .faq-wrap { background: var(--card); border-top: 1px solid var(--line); }
   .faq-item {
@@ -264,13 +323,14 @@
   <header>
     <div class="header-inner">
       <div class="brand">
-        <div class="brand-mark">LIU</div>
+        <div class="brand-mark"><img src="assets/jata-negara.png" alt="Jata Negara"></div>
         <div>
           <div class="brand-name">Lembaga Iklan Ubat</div>
           <div class="brand-sub">Kementerian Kesihatan Malaysia</div>
         </div>
       </div>
       <nav class="header-nav">
+        <a href="#tentang">Tentang LIU</a>
         <a href="#perkhidmatan">Perkhidmatan</a>
         <a href="#faq">Soalan Lazim</a>
         <a href="#hubungi">Hubungi</a>
@@ -296,13 +356,148 @@
     </div>
   </div>
 
-  <div class="trust">
-    <div class="trust-inner">
-      <div class="trust-item"><span class="trust-dot"></span> Diselia Lembaga Iklan Ubat (LIU)</div>
-      <div class="trust-item"><span class="trust-dot"></span> Bawah Peraturan LIU 1976</div>
-      <div class="trust-item"><span class="trust-dot"></span> Bantuan tersedia 24/7</div>
+
+  <section id="tentang">
+    <div class="section-head">
+      <div class="section-tag">Tentang LIU</div>
+      <h2>Lembaga Iklan Ubat</h2>
+      <p>
+        Lembaga Iklan Ubat (LIU) ditubuhkan menurut peruntukan di bawah
+        Peraturan Lembaga Iklan Ubat 1976, bertujuan untuk berbincang
+        mengenai permohonan kelulusan iklan-iklan ubat dan perkhidmatan
+        yang diterima. Atas budi bicaranya, Lembaga boleh:
+      </p>
     </div>
-  </div>
+    <ul class="about-list">
+      <li>Memberi kelulusan untuk permohonan iklan.</li>
+      <li>Menilai, mengubah polisi dan garis panduan mengikut keperluan.</li>
+      <li>Membatalkan / menarik balik kelulusan yang telah diberikan.</li>
+    </ul>
+
+    <div class="section-head" style="margin-top: 48px;">
+      <div class="section-tag">Keahlian</div>
+      <h2>Ahli Lembaga Iklan Ubat</h2>
+      <p>
+        Ahli-ahli Lembaga Iklan Ubat dilantik oleh Menteri Kesihatan seperti
+        yang diperuntukkan di bawah Peraturan-Peraturan Lembaga Iklan Ubat 1976.
+      </p>
+    </div>
+    <div class="member-grid">
+      <div class="member-card">
+        <div class="member-no">1</div>
+        <div>
+          <div class="member-name">YBhg. Datuk Dr. Mahathar bin Abd Wahab</div>
+          <div class="member-role">Pengerusi</div>
+          <div class="member-org">Ketua Pengarah Kesihatan, Kementerian Kesihatan Malaysia (KKM)</div>
+        </div>
+      </div>
+      <div class="member-card">
+        <div class="member-no">2</div>
+        <div>
+          <div class="member-name">YBrs. Dr. Azuana binti Ramli</div>
+          <div class="member-role">Pengerusi Silih Ganti</div>
+          <div class="member-org">Timbalan Ketua Pengarah Kesihatan (Perkhidmatan Farmasi), KKM</div>
+        </div>
+      </div>
+      <div class="member-card">
+        <div class="member-no">3</div>
+        <div>
+          <div class="member-name">YBrs. Dr. Hirman bin Ismail</div>
+          <div class="member-org">Pengarah Amalan Perubatan, KKM</div>
+        </div>
+      </div>
+      <div class="member-card">
+        <div class="member-no">4</div>
+        <div>
+          <div class="member-name">YBrs. Tn. Mohd Zawawi bin Abdullah</div>
+          <div class="member-org">Pengarah Bahagian Penguatkuasaan Farmasi, KKM</div>
+        </div>
+      </div>
+      <div class="member-card">
+        <div class="member-no">5</div>
+        <div>
+          <div class="member-name">Dr. Vasu Pillai Letchumanan</div>
+          <div class="member-org">Setiausaha, Persatuan Perubatan Malaysia</div>
+        </div>
+      </div>
+      <div class="member-card">
+        <div class="member-no">6</div>
+        <div>
+          <div class="member-name">En. Anwar Anis bin Anis Ahmad</div>
+          <div class="member-org">Setiausaha, Persatuan Hospital Swasta Malaysia</div>
+        </div>
+      </div>
+      <div class="member-card">
+        <div class="member-no">7</div>
+        <div>
+          <div class="member-name">Dr. Pearl Leong Yuet Mae</div>
+          <div class="member-org">Setiausaha, Persekutuan Pengamal Perubatan Swasta Malaysia</div>
+        </div>
+      </div>
+      <div class="member-card">
+        <div class="member-no">8</div>
+        <div>
+          <div class="member-name">Dr. Rafidah binti Dato' Abdullah</div>
+          <div class="member-org">Pakar Perubatan Hospital Putrajaya, KKM</div>
+        </div>
+      </div>
+      <div class="member-card">
+        <div class="member-no">9</div>
+        <div>
+          <div class="member-name">YBrs. Prof Madya Dr. Wan Amir Nizam bin Wan Ahmad</div>
+          <div class="member-org">Ahli Farmakologi, Universiti Sains Malaysia</div>
+        </div>
+      </div>
+      <div class="member-card">
+        <div class="member-no">10</div>
+        <div>
+          <div class="member-name">YBrs. Puan Rosliza binti Lajis</div>
+          <div class="member-org">Timbalan Pengarah Pusat Penilaian Produk dan Kosmetik (PPPK), Bahagian Regulatori Farmasi Negara, KKM</div>
+        </div>
+      </div>
+      <div class="member-card">
+        <div class="member-no">11</div>
+        <div>
+          <div class="member-name">Pn. Asniza binti Alias</div>
+          <div class="member-org">Timbalan Pengarah, Bahagian Penguatkuasaan Farmasi, KKM</div>
+        </div>
+      </div>
+      <div class="member-card">
+        <div class="member-no">12</div>
+        <div>
+          <div class="member-name">Pn. Fatkhiah binti Haji Khalil</div>
+          <div class="member-org">Timbalan Pengarah, Bahagian Amalan & Perkembangan Farmasi, KKM</div>
+        </div>
+      </div>
+      <div class="member-card">
+        <div class="member-no">13</div>
+        <div>
+          <div class="member-name">En. Ch'ng Kien Peng</div>
+          <div class="member-org">Ahli Farmasi, Malaysian Organisation of Pharmaceutical Industries (MOPI)</div>
+        </div>
+      </div>
+      <div class="member-card">
+        <div class="member-no">14</div>
+        <div>
+          <div class="member-name">Pn. Pan Yin Hsia, Susan</div>
+          <div class="member-org">Ahli Farmasi, Persatuan Farmasi Malaysia</div>
+        </div>
+      </div>
+      <div class="member-card">
+        <div class="member-no">15</div>
+        <div>
+          <div class="member-name">YBrs. En. Kamarudin bin Abdul Rani</div>
+          <div class="member-org">Setiausaha Bahagian Kawalan dan Pematuhan, Kementerian Komunikasi</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="secretary-box">
+      <div class="label">Setiausaha</div>
+      <div class="member-name">Pn. Suliati binti Mohd Zin</div>
+      <div class="member-org">Ketua Penolong Pengarah Kanan, Bahagian Penguatkuasaan Farmasi, KKM</div>
+    </div>
+  </section>
 
   <section id="perkhidmatan">
     <div class="section-head">
@@ -386,6 +581,7 @@
       </div>
       <div class="footer-col">
         <h4>Pautan Pantas</h4>
+        <a href="#tentang">Tentang LIU</a>
         <a href="#perkhidmatan">Perkhidmatan</a>
         <a href="#faq">Soalan Lazim</a>
       </div>
